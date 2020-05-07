@@ -1,0 +1,18 @@
+name: bertram
+
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python=3.7
+  - numpy
+  - pytorch
+  - torchvision
+  - scipy
+  - gensim=3.8
+  - jsonpickle=1.2
+  - pip:
+      - transformers==2.1
+      - visdom==0.1.8.9
