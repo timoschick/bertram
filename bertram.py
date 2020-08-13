@@ -19,7 +19,7 @@ import torch
 import torch.nn as nn
 from torch.nn import MSELoss, Module, Embedding
 from transformers import BertModel, BertConfig, RobertaModel, BertTokenizer, RobertaTokenizer, BertPreTrainedModel, \
-    RobertaConfig, ROBERTA_PRETRAINED_MODEL_ARCHIVE_MAP, PreTrainedTokenizer, PreTrainedModel
+    RobertaConfig, PreTrainedTokenizer, PreTrainedModel
 
 import log
 from input_processor import InputProcessor
@@ -357,7 +357,6 @@ class Bertram(BertPreTrainedModel):
 class BertramForRoberta(Bertram):
     """An instance of BERTRAM that used RoBERTa instead of BERT as the underlying language model"""
     config_class = RobertaConfig
-    pretrained_model_archive_map = ROBERTA_PRETRAINED_MODEL_ARCHIVE_MAP
     base_model_prefix = "roberta"
 
     def __init__(self, transformer_config: BertConfig, bertram_config: BertramConfig, do_setup=False):
